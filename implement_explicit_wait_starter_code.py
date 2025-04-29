@@ -13,7 +13,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.firefox import GeckoDriverManager
 
 # define URL
@@ -36,7 +36,15 @@ wait = WebDriverWait(driver, 10)
 
 # find the Enable button
 enable_button = driver.find_element(
-  By.XPATH, '/html/body/div[2]/div/div[1]/form[2]/button'  # Example: "//button[text()='Enable']"
+  By.XPATH,
+  (
+    (
+        (
+            '/html/body/div[2]/div/div[1]/form[2]/button'
+            # Example: "//button[text()='Enable']"
+        )
+    )
+  )
 )
 # click the Enable button
 enable_button.click()
@@ -52,20 +60,33 @@ sleep(3)
 
 # find the Remove button
 remove_button = driver.find_element(
-  By.XPATH, '/html/body/div[2]/div/div[1]/form[1]/button'  # Example: "//button[text()='Remove']"
+  By.XPATH, (
+    (
+        '/html/body/div[2]/div/div[1]/form[1]/button'
+        # Example: "//button[text()='Remove']"
+    )
+  )
 )
 remove_button.click()
 sleep(3)
 
 # find the Add button
 # uncomment and replace XPATH
-add_button = wait.until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div/div[1]/form[1]/button')))
+add_button = wait.until(
+    EC.element_to_be_clickable(
+        (By.XPATH, '/html/body/div[2]/div/div[1]/form[1]/button')
+    )
+)
 add_button.click()
 sleep(3)
 
 # find the checkbox
 # uncomment and replace XPATH
-checkbox = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="checkbox"]')))
+checkbox = wait.until(
+    EC.element_to_be_clickable(
+        (By.XPATH, '//*[@id="checkbox"]')
+    )
+)
 checkbox.click()
 sleep(3)
 
