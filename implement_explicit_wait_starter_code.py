@@ -1,7 +1,14 @@
 """
-This module demonstrates how to:
-Parse text files as data with comma separated values.
-line into a list of words.
+This module demonstrates how to: perform explicit waits
+Automate the process of enabling and disabling a checkbox
+and removing and adding a checkbox using Selenium.
+This example automates the process of enabling and disabling
+a checkbox and removing and adding a checkbox on a webpage.
+This example uses the Herokuapp dynamic controls page:
+https://the-internet.herokuapp.com/dynamic_controls
+This example includes importing necessary libraries,
+setting up the Firefox WebDriver, and performing the actions.
+
 
 Author: Arnold Murphy
 Date: 2025-04-29
