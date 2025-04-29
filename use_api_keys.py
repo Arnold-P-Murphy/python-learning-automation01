@@ -14,8 +14,13 @@ import requests
 BASE_URL = "http://api.openweathermap.org/data/2.5/forecast"
 
 # define parameters
-parameters = {"q": "Paris,FR", "appid": "ec9a4a5597b5c2567cfc219bf2ff3a1f"}
-
+# parameters = {"q": "Paris,FR", "appid": "cc697336f7223cfe3fe05a30ee3dbe44"}
+parameters = {
+    "q": "Paris,FR",
+    "appid": "cc697336f7223cfe3fe05a30ee3dbe44",
+    "units": "metric",
+    "cnt": 5
+}
 # make API request, passing in base URL and parameters
 response = requests.get(BASE_URL, params=parameters, timeout=10)
 
