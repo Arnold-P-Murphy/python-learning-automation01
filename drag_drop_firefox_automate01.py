@@ -44,7 +44,7 @@ actions = ActionChains(driver)
 actions.drag_and_drop(source, target).perform()
 
 # Optional: Wait to observe the result
-time.sleep(3)
+time.sleep(25)
 
 # Close the browser
 driver.quit()
