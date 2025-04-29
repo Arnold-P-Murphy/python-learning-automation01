@@ -36,7 +36,7 @@ wait = WebDriverWait(driver, 10)
 
 # find the Enable button
 enable_button = driver.find_element(
-  By.XPATH, 'FILL IN'  # Example: "//button[text()='Enable']"
+  By.XPATH, '/html/body/div[2]/div/div[1]/form[2]/button'  # Example: "//button[text()='Enable']"
 )
 # click the Enable button
 enable_button.click()
@@ -52,21 +52,21 @@ sleep(3)
 
 # find the Remove button
 remove_button = driver.find_element(
-  By.XPATH, 'FILL IN'  # Example: "//button[text()='Remove']"
+  By.XPATH, '/html/body/div[2]/div/div[1]/form[1]/button'  # Example: "//button[text()='Remove']"
 )
 remove_button.click()
 sleep(3)
 
 # find the Add button
 # uncomment and replace XPATH
-# add_button = wait.until(EC.element_to_be_clickable((By.XPATH, 'FILL IN')))
-# add_button.click()
+add_button = wait.until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div/div[1]/form[1]/button')))
+add_button.click()
 sleep(3)
 
 # find the checkbox
 # uncomment and replace XPATH
-# checkbox = wait.until(EC.element_to_be_clickable((By.XPATH, 'FILL IN')))
-# checkbox.click()
+checkbox = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="checkbox"]')))
+checkbox.click()
 sleep(3)
 
 # close the browser and quit the webdriver
