@@ -7,25 +7,41 @@ Author: Arnold Murphy
 Date: 2025-04-23
 """
 
-# import necessary libraries
 import requests
 
-# define base URL
-BASE_URL = "http://api.openweathermap.org/data/2.5/forecast"
+# Replace with your actual API key
+API_KEY = "ec9a4a5597b5c2567cfc219bf2ff3a1f"  # <-- Your OpenWeatherMap API key
 
-# define parameters
-# parameters = {"q": "Paris,FR", "appid": "cc697336f7223cfe3fe05a30ee3dbe44"}
-parameters = {
-    "q": "Paris,FR",
-    "appid": "cc697336f7223cfe3fe05a30ee3dbe44",
-    "units": "metric",
-    "cnt": 5
+# Coordinates for Prince Albert, Saskatchewan, Canada
+latitude = 53.2033
+longitude = -105.7531
+
+# Base URL for weather data by coordinates
+BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
+
+# Parameters for API request
+params = {
+    "lat": latitude,
+    "lon": longitude,
+    "appid": API_KEY,
+    "units": "metric"  # Use 'imperial' for Fahrenheit
 }
-# make API request, passing in base URL and parameters
-response = requests.get(BASE_URL, params=parameters, timeout=10)
 
-# print out text from API response
-print(response.text)
+# Make the GET request
+response = requests.get(BASE_URL, params=params, timeout=10)
+
+# Check the response status and display data
+if response.status_code == 200:
+    data = response.json()
+    city_name = data.get("name", "Unknown location")
+    print(f"Weather in {city_name}, Saskatchewan, Canada:")
+    print(f"Temperature: {data['main']['temp']}°C")
+    print(f"Weather: {data['weather'][0]['description'].capitalize()}")
+else:
+    print(
+        f"Failed to retrieve weather data: {response.status_code} - "
+        f"{response.text}"
+    )
 
 
 # End-of-file (EOF)
