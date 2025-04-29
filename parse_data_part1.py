@@ -1,0 +1,19 @@
+'''
+This module demonstrates how to read a file and parse two different variables
+to create two separate files for each tuple.
+
+Author: Arnold Murphy
+Date: 2025-04-27
+'''
+
+FILE_PATH = "groceries.txt"
+
+with open(FILE_PATH, "r", encoding="utf-8") as file:
+    data = file.read()
+
+print("data:", data)
+parsed_data = data.split(", ")
+print("parsed data:", parsed_data)
+print("item at index 2:", parsed_data[2])
+
+# End-of-file (EOF)

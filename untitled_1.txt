@@ -1,0 +1,10 @@
+"""
+This module demonstrates how to : Parse text files as data with comma separated values. 
+line into a list of words.
+
+Author: Arnold Murphy
+Date: 2025-04-23
+"""
+
+
+# End-of-file (EOF)
