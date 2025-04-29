@@ -1,3 +1,16 @@
+"""
+This module demonstrates how to : Parse text files as data with comma separated values. 
+line into a list of words.
+
+Author: Arnold Murphy
+Date: 2025-04-29
+"""
+
+
+
+
+
+
 # import relevant libraries
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -64,3 +77,5 @@ sleep(3)
 
 # close the browser and quit the webdriver
 driver.quit()
+
+# End-of-file (EOF)
