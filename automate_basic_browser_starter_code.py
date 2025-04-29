@@ -36,7 +36,7 @@ driver.get(URL)
 # find the first name field
 first_name = driver.find_element(By.XPATH, '//*[@id="input-firstname"]')
 # fill out the first name field
-first_name.send_keys("John")
+first_name.send_keys("Johnny")
 
 # find the last name field
 last_name = driver.find_element(By.XPATH, '//*[@id="input-lastname"]')
