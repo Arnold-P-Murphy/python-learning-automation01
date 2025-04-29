@@ -13,16 +13,16 @@ import requests
 API_KEY = "ec9a4a5597b5c2567cfc219bf2ff3a1f"  # <-- Your OpenWeatherMap API key
 
 # Coordinates for Prince Albert, Saskatchewan, Canada
-latitude = 53.2033
-longitude = -105.7531
+LATITUDE = 53.2033
+LONGITUDE = -105.7531
 
 # Base URL for weather data by coordinates
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 
 # Parameters for API request
 params = {
-    "lat": latitude,
-    "lon": longitude,
+    "lat": LATITUDE,
+    "lon": LONGITUDE,
     "appid": API_KEY,
     "units": "metric"  # Use 'imperial' for Fahrenheit
 }
